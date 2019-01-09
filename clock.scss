@@ -1,0 +1,138 @@
+/* Mixins and keyframes */
+@font-face { font-family: Digital Seven; src: url('digital-7.ttf'); }
+
+@mixin keyframes($animationName)
+{
+    @keyframes #{$animationName} {
+        @content;
+    }
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animate($values) {
+  -webkit-animation: $values;
+     -moz-animation: $values;
+          animation: $values;
+}
+
+@include keyframes(colorchange) {
+    0%   {background: #8e44ad;}
+    20%  {background: #2980b9;}
+    40%  {background: #27ae60;}
+    60%  {background: #f1c40f;}
+    80%  {background: #d35400;}
+    100% {background: #c0392b;}
+}
+
+/* General */
+html {
+    height: 100%;
+    width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+
+    color: #fff;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+
+    @include animate(colorchange 20s linear infinite alternate);
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+a:hover {
+    background-color: #fff;
+    color: #3498db;
+}
+
+h1 {
+    text-align: center;
+
+    color: #fff;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+p {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.btnset {
+  text-align: center;
+  margin-top: 20px;
+
+  a:hover {
+    background-color: transparent;
+  }
+
+  .btn {
+    margin: 15px;
+
+    padding: 10px 20px 10px 20px;
+
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .btn:hover {
+    outline: 0px;
+  }
+
+  .btn-nonactive {
+    background-color: #fff;
+    color: #2980b9;
+
+    border: 3px solid #fff;
+  }
+
+  .btn-active {
+    background-color: transparent;
+    color: #fff;
+
+    border: 3px solid #fff;
+  }
+
+  .btn-active:hover {
+    background-color: #fff;
+    color: #2980b9;
+  }
+}
+
+#canvas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#clock-digital {
+  text-align: center;
+
+  padding-top: 20px;
+
+  font-family: 'Digital Seven', sans-serif;
+  font-size: 72px;
+}

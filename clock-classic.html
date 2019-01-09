@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta property="og:image" content="http://graffme.pl/projects/canvasclock/thumbnail.png">
+  <link rel="stylesheet" href="clock.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+<body>
+
+<h1>Canvas Clock</h1>
+<p>This is a simple HTML5 Canvas clock animation with a changing background, using scss mixins and keyframes.</p>
+<p>You can check the code <a href="https://jsfiddle.net/graffme/d008L2L4/" target="_blank">here</a>.</p>
+
+<canvas id="canvas" width="300" height="300">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+<script src="clock-classic.js"></script>
+
+<div class="btnset">
+<a href="#" ><button class="btn btn-nonactive" type="button" >Classic</button></a>
+<a href="clock-digital.html" ><button class="btn btn-active" type="button" >Digital</button></a>
+</div>
+
+</body>
+</html>
